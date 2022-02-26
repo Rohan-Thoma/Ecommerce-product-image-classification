@@ -55,6 +55,9 @@ File descriptions:
 ### <a href="https://github.com/Rohan-Thoma/Mobile_Ad_Click_Prediction/blob/main/Mobile_Ad_Pred_EDA.ipynb"> Data_pipeline.ipynb </a> :
 * This notebook contains the code for the entire pipeline for prediction of the category of any new image. Here we will resize the image to  the required size and then make the prediction for the top 4 classes of level 2 which are the most possible and likely classes for that product.
 
+### <a href="https://github.com/Rohan-Thoma/Mobile_Ad_Click_Prediction/blob/main/Mobile_Ad_Pred_EDA.ipynb"> streamlit_app.ipynb </a> :
+* This is the notebook containing the code regarding the deployed interactive app, which predicts the category of the image either uploaded by the user or it autonmatically scrapes a random image from the web and the user can see the performance of the model. The app also maintains the session registery of all the images given the user and the user can observe the model performance across various categories of images. Check out the app <a  href="https://github.com/Rohan-Thoma/Mobile_Ad_Click_Prediction/blob/main/Mobile_Ad_Pred_EDA.ipynb"> here. </a>
+
 ### Scores from the various deep learning networks are given below:
 <table style="width:100%">
   <tr>
@@ -88,7 +91,7 @@ File descriptions:
   <tr>
    <td>4</td>
     <td>Resnet50 with fine tuning of all layers </td>
-    <td>1 million images </td>
+    <td>on 1 million images </td>
    <td>5070 of class level 3</td>
    <td>54.90 %</td>
   </tr>
