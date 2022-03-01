@@ -289,11 +289,72 @@ if option == 'Run the app':
         
         #This is the line of code for searching using the Google search API
         try:
+            #1
             gis = GoogleImagesSearch('AIzaSyDOH1sGLaphtsgqLZHeSJ3E-zg-vflPsI0', '8d69305e4f3922c65')
             gis.search(search_params=_search_params)
         except Exception as e:
-            gis= GoogleImagesSearch('AIzaSyA3--ulfR-P4846NblrMI57BbbBEccwOjc', '23616888a5680a202')
-            gis.search(search_params=_search_params)
+            try:
+                #2
+                gis= GoogleImagesSearch('AIzaSyA3--ulfR-P4846NblrMI57BbbBEccwOjc', '23616888a5680a202')
+                gis.search(search_params=_search_params)
+            except Exception as e:
+                try:
+                    #3
+                    gis= GoogleImagesSearch('AIzaSyDLCH1odH3D2l0WRy6sqfIWLyyM4FU2Ym0', 'fce75155965d14dbc')
+                    gis.search(search_params=_search_params)
+                except Exception as e:
+                    try:
+                        #4
+                        gis= GoogleImagesSearch('AIzaSyCwXntQmrEegO4jm91dSMqF9164YiaIB3E', '59257291e869d85b0')
+                        gis.search(search_params=_search_params)
+                    except Exception as e:
+                        try:
+                            #5
+                            gis= GoogleImagesSearch('AIzaSyA2CtvGdhtqWCaQvfPiRrHJ_Dq3fu61W_o', '3df6375c9ef9f1c81')
+                            gis.search(search_params=_search_params)
+                        except Exception as e:
+                            try:
+                                #6
+                                gis= GoogleImagesSearch('AIzaSyAHYCtrp4m20xop-ybMmXmMYYDtVTkZURo', '6ac94b1a2f34d2cf8')
+                                gis.search(search_params=_search_params)
+                            except Exception as e:
+                                try:
+                                    #7
+                                    gis= GoogleImagesSearch('AIzaSyByYvmhrN593p-HS6vUZU941mKnFg0JFa4', '73f57bcd8e813cc4d')
+                                    gis.search(search_params=_search_params)
+                                except Exception as e:
+                                    try:
+                                        #8
+                                        gis= GoogleImagesSearch('AIzaSyBlNaQEMpgvqlueJDrsfo4Zrs5yBWzWJKw', 'a21387551183dfdf8')
+                                        gis.search(search_params=_search_params)
+                                    except Exception as e:
+                                        try:
+                                            #9
+                                            gis= GoogleImagesSearch('AIzaSyBrOn6rOUA9bDDkXhI_bSAdG7A60VjrqwQ', '6daa47984d40804e9')
+                                            gis.search(search_params=_search_params)
+                                        except Exception as e:
+                                            try:
+                                                #10
+                                                gis= GoogleImagesSearch('AIzaSyCO4XIHAw9UtSVsh-iWIHtrD4zK59Lw64c', 'd91ef742a802180f4')
+                                                gis.search(search_params=_search_params)
+                                            except Exception as e:
+                                                try:
+                                                    #11
+                                                    gis= GoogleImagesSearch('AIzaSyB-HQqgo1m5BX8JYpLicKIpPnGyVREyDPA', '65f189d5678fec689')
+                                                    gis.search(search_params=_search_params)
+                                                except Exception as e:
+                                                    try:
+                                                        #12
+                                                        gis= GoogleImagesSearch('AIzaSyBfGx0PNplYCdoe5VSkhbTndNo7gIozWCA', 'fc0d18f90c8451fae')
+                                                        gis.search(search_params=_search_params)
+                                                    except Exception as e:
+                                                        try:
+                                                            #13
+                                                            gis= GoogleImagesSearch('AIzaSyCloYyycTRyuvUUOF5eME75eOOudOjpye0', '3094e52b534220c58')
+                                                            gis.search(search_params=_search_params)
+                                                        except Exception as e:
+                                                            st.error("cannot get the image at the moment..! Exhausted all the engines search limit...!")
+                
         
         #This is neccessary information headers to get the image, otherwise the websites will refuse to provide the images
         count=0
