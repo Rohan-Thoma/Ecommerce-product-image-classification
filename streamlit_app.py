@@ -62,7 +62,7 @@ def get_file_content_as_string(path_1):
 st.title('Ecommerce product image classification for CDiscount.com')
 
 path = os.path.dirname(__file__)
-my_file = path+'/CDiscount.png'
+my_file = '/CDiscount.png'
 f =  open(my_file,'r')
 img_ = f.read()
 
