@@ -54,7 +54,7 @@ if 'classes_list' not in st.session_state:
 def get_file_content_as_string(path_1):
     path = os.path.dirname(__file__)
     my_file = path + path_1
-    with open(path,'r') as f:
+    with open(my_file,'r') as f:
         instructions=f.read()
     return instructions
 
