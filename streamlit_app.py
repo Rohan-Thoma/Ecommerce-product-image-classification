@@ -9,6 +9,7 @@ from google_images_search import GoogleImagesSearch
 import warnings
 warnings.filterwarnings('ignore')
 from tensorflow.keras.models import model_from_json
+import os
 
 #This gets the google API ready and it stays through out the session
 if 'gis' not in st.session_state:
@@ -50,17 +51,23 @@ if 'classes_list' not in st.session_state:
         st.session_state.classes_list =  pickle.load(pred_file)
          
 #This is load the markdown page for the entire home page
-def get_file_content_as_string(path):
+def get_file_content_as_string(path_1):
+    path = os.path.dirname(__file__)
+    my_file = path + path_1
     with open(path,'r') as f:
         instructions=f.read()
     return instructions
 
 #This is for the instructions home page
 st.title('Ecommerce product image classification for CDiscount.com')
-with open('/app/ecommerce-product-image-classification/CDiscount.png','rb') as f:
+
+path = os.path.dirname(__file__)
+my_file = path+'/CDiscount.png'
+with open(my_file,'rb') as f:
     img_ = f
+    
 Main_image = st.image(img_,caption='Source: https://www.kaggle.com/c/cdiscount-image-classification-challenge/overview ')
-readme_text=st.markdown(get_file_content_as_string('/app/ecommerce-product-image-classification/Instructions.md'), unsafe_allow_html=True)
+readme_text=st.markdown(get_file_content_as_string('Instructions.md'), unsafe_allow_html=True)
 
 #This is for the side menu for selecting the sections of the app          
 st.sidebar.markdown('# M E N U')
@@ -69,8 +76,13 @@ option = st.sidebar.selectbox('Choose the app mode',('Show instructions','Run th
 #function to show the developer information
 def about():
     st.sidebar.markdown("# A B O U T")
-    with open('/app/ecommerce-product-image-classification/profile.png','rb') as f:
+    
+    path = os.path.dirname(__file__)
+    my_file = path+'/profile.png'
+    
+    with open(my_file,'rb') as f:
         prof_ = f
+    
     st.sidebar.image(prof_ ,width=180)
     st.sidebar.markdown("## Rohan Vailala Thoma")
     st.sidebar.markdown('* ####  Connect via [LinkedIn](https://in.linkedin.com/in/rohan-vailala-thoma)')
@@ -99,7 +111,9 @@ if option == 'Source code':
     warning_text=st.sidebar.warning('Go to "Show instructions" to read more about the app')
     
     #display the whole sode stored in the text file
-    text_file = open('app_code.txt',mode='r')
+    path = os.path.dirname(__file__)
+    my_file = path+'app_code.txt'
+    text_file = open(my_file,mode='r')
     st.code(text_file.read())
     text_file.close()
     
