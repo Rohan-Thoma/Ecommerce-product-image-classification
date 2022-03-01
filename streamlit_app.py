@@ -61,13 +61,13 @@ def get_file_content_as_string(path_1):
 #This is for the instructions home page
 st.title('Ecommerce product image classification for CDiscount.com')
 
-path = os.path.dirname(__file__)
-my_file = '/CDiscount.png'
-f =  open(my_file,'r')
-img_ = f.read()
+#path = os.path.dirname(__file__)
+#my_file = '/CDiscount.png'
+#f =  open(my_file,'r')
+#img_ = f.read()
 
     
-Main_image = st.image(img_,caption='Source: https://www.kaggle.com/c/cdiscount-image-classification-challenge/overview ')
+Main_image = st.image('https://imgur.com/3UtpvAy.png',caption='Source: https://www.kaggle.com/c/cdiscount-image-classification-challenge/overview ')
 readme_text=st.markdown(get_file_content_as_string('Instructions.md'), unsafe_allow_html=True)
 
 #This is for the side menu for selecting the sections of the app          
@@ -78,13 +78,13 @@ option = st.sidebar.selectbox('Choose the app mode',('Show instructions','Run th
 def about():
     st.sidebar.markdown("# A B O U T")
     
-    path = os.path.dirname(__file__)
-    my_file = path+'/profile.png'
+    #path = os.path.dirname(__file__)
+    #my_file = path+'/profile.png'
     
-    f =  open(my_file,'rb')
-    prof_ = f.read()
+    #f =  open(my_file,'rb')
+    #prof_ = f.read()
     
-    st.sidebar.image(prof_ ,width=180)
+    st.sidebar.image("https://imgur.com/lic0Ai2.png",width=180)
     st.sidebar.markdown("## Rohan Vailala Thoma")
     st.sidebar.markdown('* ####  Connect via [LinkedIn](https://in.linkedin.com/in/rohan-vailala-thoma)')
     st.sidebar.markdown('* ####  Connect via [Github](https://github.com/Rohan-Thoma)')
