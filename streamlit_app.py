@@ -57,7 +57,9 @@ def get_file_content_as_string(path):
 
 #This is for the instructions home page
 st.title('Ecommerce product image classification for CDiscount.com')
-Main_image = st.image('CDiscount.png',caption='Source: https://www.kaggle.com/c/cdiscount-image-classification-challenge/overview ')
+with open('CDiscount.png','rb') as f:
+    img_ = f
+Main_image = st.image(img_,caption='Source: https://www.kaggle.com/c/cdiscount-image-classification-challenge/overview ')
 readme_text=st.markdown(get_file_content_as_string('Instructions.md'), unsafe_allow_html=True)
 
 #This is for the side menu for selecting the sections of the app          
@@ -67,7 +69,9 @@ option = st.sidebar.selectbox('Choose the app mode',('Show instructions','Run th
 #function to show the developer information
 def about():
     st.sidebar.markdown("# A B O U T")
-    st.sidebar.image('profile.png',width=180)
+    with open('profile.png','rb') as f:
+        prof_ = f
+    st.sidebar.image(prof_ ,width=180)
     st.sidebar.markdown("## Rohan Vailala Thoma")
     st.sidebar.markdown('* ####  Connect via [LinkedIn](https://in.linkedin.com/in/rohan-vailala-thoma)')
     st.sidebar.markdown('* ####  Connect via [Github](https://github.com/Rohan-Thoma)')
