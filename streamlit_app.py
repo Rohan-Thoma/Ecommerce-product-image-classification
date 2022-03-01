@@ -62,9 +62,10 @@ def get_file_content_as_string(path_1):
 st.title('Ecommerce product image classification for CDiscount.com')
 
 path = os.path.dirname(__file__)
-my_file = path+'/CDiscount.PNG'
-with open(my_file,'r') as f:
-    img_ = f
+my_file = path+'/CDiscount.png'
+f =  open(my_file,'r')
+img_ = f.read()
+
     
 Main_image = st.image(img_,caption='Source: https://www.kaggle.com/c/cdiscount-image-classification-challenge/overview ')
 readme_text=st.markdown(get_file_content_as_string('Instructions.md'), unsafe_allow_html=True)
@@ -78,10 +79,10 @@ def about():
     st.sidebar.markdown("# A B O U T")
     
     path = os.path.dirname(__file__)
-    my_file = path+'/profile.PNG'
+    my_file = path+'/profile.png'
     
-    with open(my_file,'rb') as f:
-        prof_ = f
+    f =  open(my_file,'rb')
+    prof_ = f.read()
     
     st.sidebar.image(prof_ ,width=180)
     st.sidebar.markdown("## Rohan Vailala Thoma")
