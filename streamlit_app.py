@@ -113,7 +113,7 @@ if option == 'Source code':
     
     #display the whole sode stored in the text file
     path = os.path.dirname(__file__)
-    my_file = path+'app_code.txt'
+    my_file = path+'/app_code.txt'
     text_file = open(my_file,mode='r')
     st.code(text_file.read())
     text_file.close()
