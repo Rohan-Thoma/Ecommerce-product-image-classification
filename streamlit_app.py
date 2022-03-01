@@ -314,7 +314,7 @@ if option == 'Run the app':
             try:
                 
                 #first get the urls for the images 
-                results=st.session_state.gis.results()
+                results=gis.results()
                 im=np.random.choice(results,1)[0]
                 
                 #get the images from the obtained urls
