@@ -63,7 +63,7 @@ st.title('Ecommerce product image classification for CDiscount.com')
 
 path = os.path.dirname(__file__)
 my_file = path+'/CDiscount.png'
-with open(my_file,'rb') as f:
+with open(my_file,'r') as f:
     img_ = f
     
 Main_image = st.image(img_,caption='Source: https://www.kaggle.com/c/cdiscount-image-classification-challenge/overview ')
