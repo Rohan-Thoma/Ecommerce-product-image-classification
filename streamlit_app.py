@@ -68,7 +68,7 @@ st.title('Ecommerce product image classification for CDiscount.com')
 
     
 Main_image = st.image('https://imgur.com/3UtpvAy.png',caption='Source: https://www.kaggle.com/c/cdiscount-image-classification-challenge/overview ')
-readme_text=st.markdown(get_file_content_as_string('Instructions.md'), unsafe_allow_html=True)
+readme_text=st.markdown(get_file_content_as_string('/Instructions.md'), unsafe_allow_html=True)
 
 #This is for the side menu for selecting the sections of the app          
 st.sidebar.markdown('# M E N U')
