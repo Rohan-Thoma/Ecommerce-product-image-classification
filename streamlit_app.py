@@ -12,16 +12,16 @@ from tensorflow.keras.models import model_from_json
 import os
 
 #This gets the google API ready and it stays through out the session
-if 'gis' not in st.session_state:
+#if 'gis' not in st.session_state:
     
     #display the app status to the screen
-    status_1 = st.markdown('Loading the Google API...')
+    #status_1 = st.markdown('Loading the Google API...')
     
     #Load the webdriver from the disk
-    st.session_state.gis= GoogleImagesSearch('AIzaSyDOH1sGLaphtsgqLZHeSJ3E-zg-vflPsI0', '8d69305e4f3922c65')
+    #st.session_state.gis= GoogleImagesSearch('AIzaSyDOH1sGLaphtsgqLZHeSJ3E-zg-vflPsI0', '8d69305e4f3922c65')
     
     #clear the status message displayed above
-    status_1.empty()
+    #status_1.empty()
 
 #This loads the Inception_V3 network with trained weights and it stays through out the session
 if 'model' not in st.session_state:
@@ -286,13 +286,14 @@ if option == 'Run the app':
             'num': number,
             'fileType': 'jpg|gif|png'}
             #'rights': 'cc_publicdomain|cc_attribute|cc_sharealike|cc_noncommercial|cc_nonderived'}
-            
+        
         #This is the line of code for searching using the Google search API
         try:
-            st.session_state.gis.search(search_params=_search_params)
+            gis = GoogleImagesSearch('AIzaSyDOH1sGLaphtsgqLZHeSJ3E-zg-vflPsI0', '8d69305e4f3922c65')
+            gis.search(search_params=_search_params)
         except Exception as e:
-            st.session_state.gis= GoogleImagesSearch('AIzaSyA3--ulfR-P4846NblrMI57BbbBEccwOjc', '23616888a5680a202')
-            genre='Get a random product image from google automatically'
+            gis= GoogleImagesSearch('AIzaSyA3--ulfR-P4846NblrMI57BbbBEccwOjc', '23616888a5680a202')
+            gis.search(search_params=_search_params)
         
         #This is neccessary information headers to get the image, otherwise the websites will refuse to provide the images
         count=0
