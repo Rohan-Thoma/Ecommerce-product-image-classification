@@ -62,7 +62,7 @@ def get_file_content_as_string(path_1):
 st.title('Ecommerce product image classification for CDiscount.com')
 
 path = os.path.dirname(__file__)
-my_file = path+'/CDiscount.png'
+my_file = path+'/CDiscount.PNG'
 with open(my_file,'r') as f:
     img_ = f
     
@@ -78,7 +78,7 @@ def about():
     st.sidebar.markdown("# A B O U T")
     
     path = os.path.dirname(__file__)
-    my_file = path+'/profile.png'
+    my_file = path+'/profile.PNG'
     
     with open(my_file,'rb') as f:
         prof_ = f
