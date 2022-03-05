@@ -2,8 +2,7 @@
 Classifying various product images in to respective classes with multi-class classification of the images via deep learning.
 
 ## Detailed Blog explaining the whole case study is here:
-* part-1: https://medium.com/@rohanvailalathoma/mobile-ad-click-prediction-machine-learning-models-behind-the-billion-dollar-ad-industry-part-1-3971c60da991
-* part-2: https://medium.com/@rohanvailalathoma/mobile-ad-click-prediction-machine-learning-models-behind-the-billion-dollar-ad-industry-part-2-325307d2e65a
+* https://medium.com/@rohanvailalathoma/ecommerce-product-image-classification-for-cdiscount-com-ff2802d4636d
 
 ## Introduction
 Cdiscount.com is the largest non-food e-commerce company in France. The company has a wide variety of products which range from TVs to trampolines, the list of products is still rapidly growing. In the year 2017 when this competition was held, Cdiscount.com had over 30 million products up for sale. This is a rapid growth from 10 million products before 2 years. Ensuring that so many products are well classified is a challenging task. At that time, Cdiscount.com applied machine learning algorithms to the text description of the products in order to automatically predict their category. As those methods then seemed close to their maximum potential, Cdiscount.com believed that the next improvement will be through deep learning. So, they have conducted this Kaggle competition.
@@ -29,21 +28,21 @@ File descriptions:
 3. <b>	Category_names.csv </b> : This is a csv file which shows the hierarchy of the product classification. Each category_id has corresponding level1, level2 and level3 name, in French. The category_id corresponds to the category tree down to its lowest level. This hierarchical data may be useful, but it is not necessary for building models and making predictions.
 
 ## Notebooks Overview
-### <a href="https://github.com/Rohan-Thoma/Mobile_Ad_Click_Prediction/blob/main/Mobile_Ad_Pred_EDA.ipynb"> pre-processing.ipynb </a> :
+### <a href="https://github.com/Rohan-Thoma/Ecommerce-product-image-classification/blob/master/pre-processing.ipynb"> pre-processing.ipynb </a> :
 * As the dataset is huge, the data is provided in the compressed format in the BSON (Binary Java Script Object Notation) file whose file description is given above in the file description section.
 * Here as there are 7 million images in total, we cannot extract all of them and it takes up a huge amount of space which is not available in a single box they take up a total of more than 700GB of space if extracted.
 * Hence we extract only 1 million images by uniformly sampling across the whole dataset so that we can cover maximum amount of product categories with minimum number of images. Here we will skip 6 million images while parsing through the BSON file.
 
-### <a href="https://github.com/Rohan-Thoma/Mobile_Ad_Click_Prediction/blob/main/Mobile_Ad_Pred_EDA.ipynb"> translation.ipynb </a> :
+### <a href="https://github.com/Rohan-Thoma/Ecommerce-product-image-classification/blob/master/translation.ipynb"> translation.ipynb </a> :
 * Here as CDiscount is a French Company , the product category names are given in french and we need to translate those names in to english for our easy interpretation.
 * In this notebook , we have the code that will use google translate to convert the french class labels in to english class labels with a fair amount of accuracy.
 
-### <a href="https://github.com/Rohan-Thoma/Mobile_Ad_Click_Prediction/blob/main/Mobile_Ad_Pred_EDA.ipynb"> EDA_cdiscount.ipynb </a> :
+### <a href="https://github.com/Rohan-Thoma/Ecommerce-product-image-classification/blob/master/EDA_cdiscount.ipynb"> EDA_cdiscount.ipynb </a> :
 * This notebook contains the exploratory data analysis of the dataset, where we look at the class label hierarchy and also see the distribution of the various images amoung the different classes.
 * We also explore the data imbalance degree which varies from one class level to another. We also plot the images to get an idea about of the easy and the hard examples.
 * Here CD and the books will be the hard examples as they contain images printed on the cover which make the model confuse them with other products. Here the easy examples would be the products with white backgroud which highlight the product and are easy for the model to identify them.
 
-### <a href="https://github.com/Rohan-Thoma/Mobile_Ad_Click_Prediction/blob/main/Mobile_Ad_Pred_EDA.ipynb"> Modelling_cdiscount.ipynb </a> :
+### <a href="https://github.com/Rohan-Thoma/Ecommerce-product-image-classification/blob/master/Modelling_cdiscount.ipynb"> Modelling_cdiscount.ipynb </a> :
 * Here we tried out various pretrained models with a variety of configurations.
 * The various convolutional Neural networks like VGG-16,VGG-19,resnet-50, Inception-V3 have been tried out with various dataset configurations.
 * Here the networks were trained both with imbalanced raw data and check for performance. As the performance was not good, data sampling was performed and then balancing the classes along with image augmentations gave comparatively good results.
@@ -52,11 +51,11 @@ File descriptions:
 * Here for the balancing the data, 1000 images from each class were randomly sampled and used for training various networks among which inceptionet_V3 gave better validation accuracy of 57%. 
 * Here the score could be improved drastically if we tran with all the data which is close to 10 million + images.
 
-### <a href="https://github.com/Rohan-Thoma/Mobile_Ad_Click_Prediction/blob/main/Mobile_Ad_Pred_EDA.ipynb"> Data_pipeline.ipynb </a> :
+### <a href="https://github.com/Rohan-Thoma/Ecommerce-product-image-classification/blob/master/Final_notebook.ipynb"> Final_notebook.ipynb </a> :
 * This notebook contains the code for the entire pipeline for prediction of the category of any new image. Here we will resize the image to  the required size and then make the prediction for the top 4 classes of level 2 which are the most possible and likely classes for that product.
 
-### <a href="https://github.com/Rohan-Thoma/Mobile_Ad_Click_Prediction/blob/main/Mobile_Ad_Pred_EDA.ipynb"> streamlit_app.ipynb </a> :
-* This is the notebook containing the code regarding the deployed interactive app, which predicts the category of the image either uploaded by the user or it autonmatically scrapes a random image from the web and the user can see the performance of the model. The app also maintains the session registery of all the images given the user and the user can observe the model performance across various categories of images. Check out the app <a  href="https://github.com/Rohan-Thoma/Mobile_Ad_Click_Prediction/blob/main/Mobile_Ad_Pred_EDA.ipynb"> here. </a>
+### <a href="https://github.com/Rohan-Thoma/Ecommerce-product-image-classification/blob/master/streamlit_app.py"> streamlit_app.ipynb </a> :
+* This is the notebook containing the code regarding the deployed interactive app, which predicts the category of the image either uploaded by the user or it autonmatically scrapes a random image from the web and the user can see the performance of the model. The app also maintains the session registery of all the images given the user and the user can observe the model performance across various categories of images. Check out the app <a  href="https://share.streamlit.io/rohan-thoma/ecommerce-product-image-classification"> here. </a>
 
 ### Scores from the various deep learning networks are given below:
 <table style="width:100%">
