@@ -72,7 +72,7 @@ def about():
     #f =  open(my_file,'rb')
     #prof_ = f.read()
     
-    st.sidebar.image("https://imgur.com/lic0Ai2.png",width=180)
+    st.sidebar.image("https://imgur.com/a/L55sVu9.png",width=180)
     st.sidebar.markdown("## Rohan Vailala Thoma")
     st.sidebar.markdown('* ####  Connect via [LinkedIn](https://in.linkedin.com/in/rohan-vailala-thoma)')
     st.sidebar.markdown('* ####  Connect via [Github](https://github.com/Rohan-Thoma)')
