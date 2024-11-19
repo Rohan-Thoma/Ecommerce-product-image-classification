@@ -316,6 +316,8 @@ if option == 'Run the app':
                                         gis= GoogleImagesSearch('AIzaSyBlNaQEMpgvqlueJDrsfo4Zrs5yBWzWJKw', 'a21387551183dfdf8')
                                         gis.search(search_params=_search_params)
                                     except Exception as e:
+                                        st.error("cannot get the image at the moment..! Exhausted all the engines search limit...!")
+                                        """
                                         try:
                                             #9
                                             gis= GoogleImagesSearch('AIzaSyBrOn6rOUA9bDDkXhI_bSAdG7A60VjrqwQ', '6daa47984d40804e9')
@@ -342,7 +344,7 @@ if option == 'Run the app':
                                                             gis.search(search_params=_search_params)
                                                         except Exception as e:
                                                             st.error("cannot get the image at the moment..! Exhausted all the engines search limit...!")
-                
+                                            """
         
         #This is neccessary information headers to get the image, otherwise the websites will refuse to provide the images
         count=0
